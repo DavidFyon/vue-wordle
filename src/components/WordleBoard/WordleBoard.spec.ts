@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 
 import { mount } from '@vue/test-utils'
-import WordleBoard from '../WordleBoard.vue';
+import WordleBoard from './WordleBoard.vue';
 
 describe('WordleBoard', () => {
     it('renders properly', () => {
