@@ -1,1 +1,1 @@
-export const VICTORY_MESSAGE = 'You won!';
+export const VICTORY_MESSAGE = "You won!";
