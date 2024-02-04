@@ -6,7 +6,7 @@ import {VICTORY_MESSAGE} from "../../../settings";
 
 describe("WordleBoard", () => {
     test("a victory message appears", async () => {
-        const wrapper = mount(WordleBoard, {props: {wordOfTheDay: "TESTS"}})
+        const wrapper = mount(WordleBoard)
 
         expect(wrapper.text()).toContain(VICTORY_MESSAGE)
     })
