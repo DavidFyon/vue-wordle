@@ -7,6 +7,5 @@ defineProps<{
 </script>
 
 <template>
-  <input type="text">
   <p>{{ VICTORY_MESSAGE }}</p>
 </template>
