@@ -6,8 +6,15 @@ import {VICTORY_MESSAGE} from "../../../settings";
 
 describe("WordleBoard", () => {
     test("a victory message appears", async () => {
+        // Arrange = configuration
         const wrapper = mount(WordleBoard, {props: {wordOfTheDay: "TESTS"}})
 
+        // Act = actions
+        const guessInput = wrapper.find("input[type=text]")
+        await guessInput.setValue("TESTS")
+        await guessInput.trigger("keydown.enter")
+
+        // Assert = vérification
         expect(wrapper.text()).toContain(VICTORY_MESSAGE)
     })
 })
