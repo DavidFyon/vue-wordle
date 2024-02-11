@@ -56,4 +56,20 @@ describe("WordleBoard", () => {
 
         expect(console.warn).toHaveBeenCalled()
     })
+
+    test("if the word of the day is not a word of a list, a warning is emitted", async () => {
+        console.warn = vi.fn()
+
+        mount(WordleBoard, {props: {wordOfTheDay: "QWERT"}})
+
+        expect(console.warn).toHaveBeenCalled()
+    })
+
+    test("no warning is emitted if the word of the day provided is a real uppercase list word with 5 characters", async () => {
+        console.warn = vi.fn()
+
+        mount(WordleBoard, {props: {wordOfTheDay: "BRUME"}})
+
+        expect(console.warn).not.toHaveBeenCalled()
+    })
 })
