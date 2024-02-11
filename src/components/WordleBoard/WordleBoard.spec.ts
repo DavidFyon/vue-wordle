@@ -1,4 +1,4 @@
-import {describe, expect, test, beforeEach} from "vitest";
+import {describe, expect, test, beforeEach, vi} from "vitest";
 
 import {mount} from "@vue/test-utils";
 import WordleBoard from "./WordleBoard.vue";
@@ -39,5 +39,12 @@ describe("WordleBoard", () => {
         // Assert = vérification
         expect(wrapper.text()).not.toContain(VICTORY_MESSAGE)
         expect(wrapper.text()).not.toContain(DEFEAT_MESSAGE)
+    })
+
+    test("If a word of the day provided does not have exactly 5 characters, a warning is emitted", async () => {
+        vi.spyOn(console, "warn")
+        mount(WordleBoard, {props: {wordOfTheDay: "TOOLONG"}})
+
+        expect(console.warn).toHaveBeenCalled()
     })
 })
