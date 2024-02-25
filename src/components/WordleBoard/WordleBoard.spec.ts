@@ -27,7 +27,7 @@ describe("WordleBoard", () => {
         })
 
         test("a defeat message appears if the user makes a guess that is incorrect", async () => {
-            await playerSubmitsGuess("WRONG")
+            await playerSubmitsGuess("PLAGE")
 
             expect(wrapper.text()).toContain(DEFEAT_MESSAGE)
         })
