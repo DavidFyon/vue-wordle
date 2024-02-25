@@ -43,7 +43,6 @@ function onSubmit() {
       type="text"
       @keydown.enter="onSubmit"
   >
-  {{ guessSubmitted }}
   <p
       v-if="guessSubmitted.length > 0"
       v-text="guessSubmitted === wordOfTheDay ? VICTORY_MESSAGE : DEFEAT_MESSAGE"
