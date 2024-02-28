@@ -2,7 +2,7 @@
 import {DEFEAT_MESSAGE, VICTORY_MESSAGE} from "../../../settings";
 import wordsWith5Letters from "../../../wordsWith5Letters.json";
 import {ref} from "vue";
-import GuessInput from "../../components/GuessInput/GuessInput.vue";
+import GuessInput from "./GuessInput.vue";
 
 defineProps({
   wordOfTheDay: {
